@@ -10,6 +10,7 @@ pipeline {
               script {  
                 def scannerHome = tool 'Sonarqube-msbuild' 
                 withSonarQubeEnv('Sonarqube') {
+                    sh 'dotnet tool install --global dotnet-sonarscanner'
                     sh 'export PATH=${PATH}:${HOME}/.dotnet'
                     sh 'export PATH=${PATH}:${HOME}/.dotnet/tools'
                     sh 'dotnet ${scannerHome}/sonarscanner begin /k:"aspnetsonar" /d:sonar.host.url="http://lnxhom048.rootbrasil.intranet:9000"  /d:sonar.token="sqp_39b1d8ff13f53cb345f45e3fcf861bff21b42206"'
