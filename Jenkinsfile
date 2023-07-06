@@ -11,7 +11,7 @@ pipeline {
                 def scannerHome = tool 'Sonarqube';   
                 withSonarQubeEnv('Sonarqube') {
                   sh 'dotnet sonarscanner begin /k:"aspnetsonar" /d:sonar.host.url="http://lnxhom048.rootbrasil.intranet:9000"  /d:sonar.token="sqp_39b1d8ff13f53cb345f45e3fcf861bff21b42206"'
-                  sh 'dotnet build" 
+                  sh 'dotnet build' 
                   sh 'dotnet sonarscanner end /d:sonar.token="sqp_39b1d8ff13f53cb345f45e3fcf861bff21b42206"'                       
               }
             }
