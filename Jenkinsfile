@@ -10,7 +10,9 @@ pipeline {
               script {  
                 def scannerHome = tool 'Sonarqube';   
                 withSonarQubeEnv('Sonarqube') {
-                sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=CVP -Dsonar.sources=. -Dsonar.host.url=http://lnxhom048.rootbrasil.intranet:9000 -Dsonar.token=sqp_4a698719d36f300eaa8c46ac9546e5cf84424805"
+                sh "dotnet sonarscanner begin /k:"aspnetsonar" /d:sonar.host.url="http://lnxhom048.rootbrasil.intranet:9000"  /d:sonar.token="sqp_39b1d8ff13f53cb345f45e3fcf861bff21b42206""
+                sh "dotnet build" 
+                sh "dotnet sonarscanner end /d:sonar.token="sqp_39b1d8ff13f53cb345f45e3fcf861bff21b42206""                        
               }
             }
            }
