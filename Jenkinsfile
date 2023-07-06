@@ -16,7 +16,7 @@ pipeline {
            }
          }
           
-        stage('Docker push and build') {
+        /*stage('Docker push and build') {
             steps {
                 withDockerRegistry([credentialsId: "Docker hub", url: ""]) { 
                   sh 'printenv'
@@ -24,8 +24,8 @@ pipeline {
                   sh 'docker push thiagodockerid/cvp-app:latest'
                 }
             }
-        }
-        stage('Deploy') {
+        }*/
+        /*stage('Deploy') {
             steps {
                 withKubeConfig([credentialsId: 'kubernetes']) {
                 sh "sed -i 's#replace#thiagodockerid/cvp-app:latest#g' k8s/deployment.yaml"
@@ -34,6 +34,6 @@ pipeline {
   
             }
         }
-    }
+    }*/
   }
 }
