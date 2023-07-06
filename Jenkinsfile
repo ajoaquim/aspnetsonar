@@ -8,7 +8,7 @@ pipeline {
            stage('Sonar scanner') {
             steps {
               script {  
-                def scannerHome = tool 'Sonarqube-msbuild';   
+                def scannerHome = tool 'Sonarqube-msbuild' 
                 withSonarQubeEnv('Sonarqube') {
                     sh 'export PATH=${PATH}:${HOME}/.dotnet'
                     sh 'export PATH=${PATH}:${HOME}/.dotnet/tools'
