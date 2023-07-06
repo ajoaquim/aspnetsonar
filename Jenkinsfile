@@ -10,9 +10,6 @@ pipeline {
               script {  
                 scannerHome = tool 'Sonarqube-msbuild'
                 withSonarQubeEnv('Sonarqube') {
-                    sh 'wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh'
-                    sh 'chmod +x ./dotnet-install.sh'
-                    sh './dotnet-install.sh --version latest'
                     sh 'export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools'
                     sh 'dotnet ${scannerHome}/sonarscanner begin /k:"aspnetsonar" /d:sonar.host.url="http://lnxhom048.rootbrasil.intranet:9000"  /d:sonar.token="sqp_39b1d8ff13f53cb345f45e3fcf861bff21b42206"'
                     sh 'dotnet build' 
