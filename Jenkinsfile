@@ -10,9 +10,9 @@ pipeline {
               script {  
                 scannerHome = tool 'Sonarqube-msbuild'
                 withSonarQubeEnv('Sonarqube') {
-                    sh ' /root/.dotnet/dotnet ${scannerHome}/sonarscanner begin /k:"aspnetsonar" /d:sonar.host.url="http://lnxhom048.rootbrasil.intranet:9000"  /d:sonar.token="sqp_39b1d8ff13f53cb345f45e3fcf861bff21b42206"'
-                    sh ' /root/.dotnet/dotnet build' 
-                    sh ' /root/.dotnet/dotnet ${scannerHome}/sonarscanner end /d:sonar.token="sqp_39b1d8ff13f53cb345f45e3fcf861bff21b42206"'                       
+                    sh ' /tmp/dotnet/dotnet ${scannerHome}/sonarscanner begin /k:"aspnetsonar" /d:sonar.host.url="http://lnxhom048.rootbrasil.intranet:9000"  /d:sonar.token="sqp_39b1d8ff13f53cb345f45e3fcf861bff21b42206"'
+                    sh ' /tmp/dotnet/dotnet build' 
+                    sh ' /tmp/dotnet/dotnet ${scannerHome}/sonarscanner end /d:sonar.token="sqp_39b1d8ff13f53cb345f45e3fcf861bff21b42206"'                       
               }
             }
            }
