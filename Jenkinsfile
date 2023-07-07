@@ -1,10 +1,7 @@
 pipeline {
     agent any
         stages {
-            stage('SCM') {
-            checkout scm
-              }
-           stage('Sonar scanner') {
+         stage('Sonar scanner') {
             steps {
               script {  
                 scannerHome = tool 'Sonarqube-msbuild'
