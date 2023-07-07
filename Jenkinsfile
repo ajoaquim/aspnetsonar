@@ -1,7 +1,3 @@
-COREHOST_TRACE=1def SONARQUBE_URL="http://lnxhom048.rootbrasil.intranet:9000"
-def MY_PROJECT_KEY="CVP"
-def REPO="https://dev.azure.com/Delivery-Un2/P20220937%20-%20CVP%20-%20Downsizing/_git/P20220937%20-%20CVP%20-%20Downsizing:/usr/src"
-
 pipeline {
     agent any
         stages {
